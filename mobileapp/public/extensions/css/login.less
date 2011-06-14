@@ -1,0 +1,171 @@
+#login{
+	form{
+		overflow: hidden;
+		margin: 0 20px;
+		padding: 10px;
+		#s2k-gradient > .box();
+		#s2k-border-radius > .button;
+		fieldset{
+			position: relative;
+			margin: 0 auto;
+			counter-reset: players;
+			&::after{
+				content:"vs";
+				position: absolute;
+				top:50%;
+				left:50%;
+				width:30px;
+				text-align: center;
+				margin: -10px 0 0 -15px;
+				font-weight: bold;
+			}
+		}
+		.formrow{
+			position: relative;
+			clear: both;
+			> div{
+				position: relative;
+				display: inline;
+				padding: 10px 5px;
+				background: transparent url("../../images/elements/el_jersey_white.svg") no-repeat 0 50%;
+				background-size: 47px 35px;
+				&::before{
+					content: counter(players);
+					counter-increment: players;
+					position: absolute;
+					top:12px;
+					font-weight: bold;
+					color: #333;
+					font-size: 15px;
+				}
+				&:nth-of-type(2n+1){
+					padding-left:50px;
+					&::before{
+						left:19px;
+					}
+				}
+				&:nth-of-type(2n+2){
+					padding-right:50px;
+					background-position-x:100%;
+					&::before{
+						right:19px;
+					}
+				}
+			}
+			&:last-of-type{
+				margin: 26px 0 0;
+				&::before,
+				&::after{
+					content:"\00a0";
+					overflow:hidden;
+					display: block;
+					background: #fff;
+					height: 1px;
+					position: absolute;
+					top:-13px;
+				}
+				&::before{
+					left:0;
+					right: 50%;
+					margin: 0 20px 0 0;
+				}
+				&::after{
+					right:0;
+					left: 50%;
+					margin: 0 0 0 20px;
+				}
+				> div{
+					background-image: url("../../images/elements/el_jersey_black.svg");
+					&::before{
+						color: #EEE;
+					}
+				}
+				
+			}
+		}
+	}
+	
+	&.opponents2{
+		fieldset{
+			&::after{
+				content:":";
+				text-align: center;
+			}
+		}
+		.formrow{
+			margin: 25px 0;
+			>div:last-of-type{
+				background-image: url("../../images/elements/el_jersey_black.svg");
+				&::before{
+					color: #EEE;
+				}
+			}
+			&:last-of-type{
+				display: none;
+			}
+		}
+	}
+}
+
+@media only screen and/*!yui*/(orientation:portrait){
+	#login{
+		form{
+			fieldset{
+				&::after{
+					margin-top: -8px;
+				}
+				.formrow{
+					> div {
+						display: block;
+						padding: 0 !important;
+						margin: 0 0 10px;
+						input{
+							width: 150px;
+						}
+						&::before{
+							top:10px;
+						}
+						&:nth-of-type(2n+2){
+							background-position-x:0;
+							&::before{
+								left:19px;
+								right:auto;
+							}
+						}
+						&:last-of-type{
+							margin-bottom: 0;
+						}
+					}
+				}
+			}
+		}
+		&.opponents2{
+			fieldset{
+				&::after{
+					content:"vs";
+				}
+			}
+			.formrow{
+				margin: 10px 0;
+				> div{
+					&:nth-of-type(2){
+						margin-top: 25px;
+					}
+				}
+				&:last-of-type{
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+.nosvg{
+    #login form .formrow > div{
+        background-image: url("../../images/elements/el_jersey_white.png");
+    }
+    #login form .formrow:last-of-type > div,
+    #login.opponents2 .formrow > div:last-of-type{
+        background-image: url("../../images/elements/el_jersey_black.png");
+    }
+}

@@ -1,0 +1,249 @@
+/***basics***/
+html{
+	min-height: 100%;
+}
+body{
+	margin:0;
+	padding:0;
+	font-size:12px;
+	line-height:14px;
+	#s2k-font > .Helvetica;
+	color:#fff;
+	background: #000;
+	background:url("../../images/backgrounds/bg_bodyhighl.png") no-repeat fixed 0 42px,
+				url("../../images/backgrounds/bg_bodyhighr.png") no-repeat fixed 100% 100%,
+				url("../../images/backgrounds/bg_bodybase.png") repeat fixed 50% 50%,
+				#000;
+	#s2k-touch > .select-none;
+	#s2k-touch > .highlight-color;
+}
+a{
+	text-decoration:none;
+	color:#fff;
+}
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
+	margin:0;
+	padding:0;
+	font-weight:normal;
+	font-size:100%;
+	line-height:normal;
+}
+p{
+	margin:0 0 14px 0;
+	padding:0;
+	line-height:14px;
+}
+
+form,
+fieldset,
+legend {
+	border:0;
+	padding:0;
+	margin:0;
+}
+object{display:block;}
+dl,dt,dd,ul,ol,li{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+img{border:none;}
+acronym,
+abbr{
+	border-bottom: #333 1px dotted;
+	font-style:normal;
+	text-transform:none;
+}
+b,strong{font-weight:bold;}
+object,embed{outline:none;}
+address{
+	font-style:normal;
+	line-height:18px;
+}
+iframe{
+	display:block;
+	border:none;
+	background:transparent;
+}
+table{
+	border-width:0;
+	border-spacing:0;
+	border-collapse:collapse;
+	caption{
+		text-align:left;
+	}
+	th,td{
+		padding:0;
+		vertical-align:top;
+	}
+	th{
+		font-weight:bold;
+		text-align:left;
+	}
+}
+
+
+
+.h1,
+.h2{
+	clear:both;
+	margin:0 0 10px 0;
+	font-size:14px;
+	line-height:normal;
+	font-weight: bold;
+}
+.h2{
+	font-size:12px;
+	margin:0 0 5px 0;
+}
+.h3{
+	font-weight:bold;
+}
+
+.button{
+	display: block;
+	height:45px;
+	padding:14px 30px 0;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 18px;
+	text-align: center;
+	text-transform: uppercase;
+	text-shadow: rgba(0, 0, 0, .5) 0 1px 1px;
+	#s2k-box > .border;
+	#s2k-gradient > .button;
+	#s2k-border-radius > .button;
+	+ .button{
+		margin: 20px 0 0;
+		#s2k-gradient > .button2;
+	}
+
+	&:active{
+		#s2k-gradient > .buttonhi;
+	}
+}
+
+input[type=submit].button{
+  width:100%;
+  border:none;
+  padding:0;
+  color:#fff;
+}
+
+input[type=text],
+input[type=email]{
+	width: 140px;
+	margin: 0 2px;
+	height: 30px;
+	padding: 5px 10px;
+	color: #fff;
+	background: #000;
+	font-size: 16px;
+	line-height: 16px;
+	font-weight: bold;
+	border: 1px solid @s2k-line-grey;
+	#s2k-font > .Helvetica;
+	#s2k-box > .border;
+	&.error{
+		border-color: @s2k-red;
+	}
+}
+
+
+#container{
+	width:100%;
+	overflow-y: hidden;
+}
+
+.bookmark{
+	display: none;
+}
+
+.page{
+	-webkit-transform: translate3d(0,0,0);
+	position: absolute;
+	top:0;
+	left:-150%;
+	width:100%;
+	text-align: center;
+	min-height: 300px;
+	#s2k-box > .border;
+	&.active{
+		left:0;
+	}
+	.toolbar{
+		position: relative;
+		height:45px;
+		padding:8px 10px 0;
+		margin: 0 0 15px;
+		color:#fff;
+		text-align:center;
+		font-weight:bold;
+		font-size:20px;
+		border-bottom: 2px solid @s2k-green;
+		#s2k-box > .border;
+		#s2k-gradient > .toolbar;
+		a{
+			position: absolute;
+			top:9px;
+			font-size: 12px;
+			line-height: 12px;
+			font-weight: bold;
+			background: #111;
+			padding: 5px 8px;
+			border:1px solid #191919;
+			#s2k-border-radius > .small;
+			&:last-of-type{
+				left: auto;
+				right: 10px;
+			}
+			&.back{
+				left: 16px;
+				right: auto;
+				padding-left: 5px;
+				&::before{
+					content:"\00a0";
+					display: block;
+					position: absolute;
+					height: 0;
+					width: 0;
+					top: 0;
+					left: -12px;
+					border-style: solid;
+					border-width: 12px 6px;
+					border-color: transparent #111 transparent transparent;
+				}
+			}
+			&.cancel{
+				background:@s2k-red;
+			}
+			
+			&:active{
+				background: @s2k-button-hi;
+				&:first-of-type{
+					&::before{
+						border-color: transparent @s2k-button-hi transparent transparent;
+					}
+				}
+			}
+		}
+	}
+	.buttonbar{
+		position: absolute;
+		bottom: 10px;
+		right:20px;
+		left:20px;
+	}
+}
+
+@media only screen and/*!yui*/(orientation:portrait){
+	.button{
+		height:38px;
+		padding:12px 0 0;
+		font-size: 14px;
+		line-height: 14px;
+	}
+	.page{
+		min-height: 360px;
+	}
+}

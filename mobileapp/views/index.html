@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{locales.global.title}}</title>
+	<meta charset="UTF-8" />
+	<meta name="language" content="{{locales.locale}}" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<link rel="apple-touch-startup-image" href="/images/startup.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" />
+
+	<!-- <meta name="description" content="🏆"/> -->
+	<meta name="robots" content="noindex,nofollow" />
+
+	<link rel="shortcut icon" href="/images/favicons/fi_standard.ico" type="image/x-icon" />
+	<link rel="apple-touch-icon" href="/images/favicons/fi_apple_touch.png" />
+
+{{#isProduction}}
+	<link rel="stylesheet" type="text/css" href="{{cdn}}{{#rev}}/{{rev}}{{/rev}}/extensions/css/mobileapp-min.css" media="screen,projection,print" />
+{{/isProduction}}
+{{^isProduction}}
+	<link rel="stylesheet/less" type="text/css" href="/extensions/css/mobileapp.less" media="screen,projection,print" />
+	<script type="text/javascript" src="/extensions/js/ext/less-1.1.1.min.js"></script>
+{{/isProduction}}
+</head>
+
+
+<body id="k-s2-de">
+	<section id="container">
+		<section id="home" class="page">
+			<div class="toolbar">
+				<h1>{{locales.global.title}}</h1>
+			</div>
+			<h2 class="h1">{{locales.home.headline}}</h2>
+			<p>{{locales.home.text}}</p>
+			<ul id="gametypes">
+				<li class="two"><a href="#login2" class="js_login" data-opponents="2">{{locales.home.gametype.2}}</a></li>
+				<li class="four"><a href="#login4" class="js_login" data-opponents="4">{{locales.home.gametype.4}}</a></li>
+				<li class="quick"><a href="#scoreboard" class="js_quickstart">{{locales.home.gametype.0}}</a></li>
+			</ul>
+		</section>
+		<section id="login" class="page">
+			<div class="toolbar">
+				<a href="#summary" class="back js_home">{{locales.toolbar.home}}</a>
+				<h1>{{locales.global.title}}</h1>
+			</div>
+			<h2 class="h1">{{locales.login.headline}}</h2>
+			<p>{{locales.login.text}}</p>
+			<form action="#" method="get" class="js_start" novalidate="novalidate">
+				<fieldset>
+					<div class="formrow">
+						<div><input type="email" name="team1_user1" /></div>
+						<div><input type="email" name="team1_user2" /></div>
+					</div>
+					<div class="formrow">
+						<div><input type="email" name="team2_user1" /></div>
+						<div><input type="email" name="team2_user2" /></div>
+					</div>
+				</fieldset>
+        <div class="buttonbar">
+          <input type="submit" class="button" value="{{locales.login.botton.go}}" />
+        </div>
+			</form>
+		</section>
+		<section id="scoreboard" class="page">
+			<div class="toolbar">
+				<a href="#scoreboard" class="hide js_undo">{{locales.toolbar.undo}}</a>
+				<h1>{{locales.global.title}}</h1>
+				<a href="#summary" class="cancel js_abort">{{locales.toolbar.cancel}}</a>
+			</div>
+			{{#scoreboard}}
+			<dl class="board {{#inverted}}inverted{{/inverted}}">
+				{{^inverted}}
+				    <dt>{{home}}</dt>
+    				<dd id="scorehome" class="scorecard full"></dd>
+				    <dt>{{visitors}}</dt>
+    				<dd id="scorevisitors" class="scorecard full"></dd>
+				{{/inverted}}
+				{{#inverted}}
+				    <dt>{{visitors}}</dt>
+    				<dd id="scorehome" class="scorecard full"></dd>
+				    <dt>{{home}}</dt>
+    				<dd id="scorevisitors" class="scorecard full"></dd>
+				{{/inverted}}
+			</dl>
+			{{/scoreboard}}
+			<div class="players">
+			    <div>
+                    <div class="formrow">
+                        <div class="home1">&nbsp;</div>
+                        <div class="home2">&nbsp;</div>
+                    </div>
+                    <div class="formrow">
+                        <div class="visitors1">&nbsp;</div>
+                        <div class="visitors2">&nbsp;</div>
+                    </div>
+                </div>
+            </div>
+		</section>
+		<section id="summary" class="page">
+			<div class="toolbar">
+				<h1>{{locales.global.title}}</h1>
+			</div>
+			<h2 class="h1">{{locales.summary.time}} <span class="js_duration">∞</span></h2>
+			<p class="h1">{{locales.summary.score}} <span class="js_finalscore">-:-</span></p>
+			<div class="tweet js_tweet"><span>{{locales.summary.tweet}}</span></div>
+			<div class="buttonbar">
+				<a href="#scoreboard" class="button js_rematch">{{locales.summary.button.changeover}}</a>
+				<a href="#home" class="button js_quit">{{locales.summary.quit}}</a>
+			</div>
+		</section>
+	</section>
+
+{{#isProduction}}
+	<script type="text/javascript" src="{{cdn}}{{#rev}}/{{rev}}{{/rev}}/extensions/basic-min.js"></script>
+{{/isProduction}}
+{{^isProduction}}
+	<script type="text/javascript" src="/extensions/js/basic.js"></script>
+	<script type="text/javascript" src="/extensions/js/loader.js"></script>
+{{/isProduction}}
+</body>
+</html>

@@ -1,0 +1,507 @@
+#scoreboard{
+    .toolbar{
+        a{
+            #s2k-transition-time > .led();
+        }
+        a.hide{
+            opacity: 0;
+            cursor: default;
+        }
+    }
+    .msg{
+        position: absolute;
+        bottom:10px;
+        left: 10px;
+        right:10px;
+        padding: 10px 0;
+        text-align: center;
+        font-weight: bold;
+        background: #000;
+    }
+	.board{
+		width: 400px;
+		min-height: 200px;
+		margin: 0 auto;
+		position: relative;
+		dt{
+			font-size: 22px;
+			line-height: normal;
+			color: @s2k-green;
+			float: left;
+			width: 50%;
+			text-align: center;
+		}
+	}
+	
+	.scorecard{
+		position: absolute;
+		width:70px;
+		padding:5px;
+		top:46px;
+		line-height: 0;
+		#s2k-transition-time > .led;
+		&::after,
+		&::before{
+			//dividerpoints
+			position: absolute;
+			content:"\00a0";
+			display: block;
+			width: 5px;
+			height: 5px;
+			background: #fff;
+			#s2k-shadow > .led;
+			#s2k-border-radius > .led;
+			#s2k-reflection > .led;
+		}
+		.rly{
+			position: relative;
+			display: inline-block;
+			width: 5px;
+			height: 5px;
+			margin: 0 9px 9px 0;
+			opacity: 0;
+			background: #fff;
+			#s2k-shadow > .led;
+			#s2k-border-radius > .led;
+			#s2k-reflection > .led;
+			#s2k-transition-time > .led;
+			&::after{
+				position: absolute;
+				right:-7px;
+				top:0;
+				content:"\00a0";
+				display: block;
+				width: 5px;
+				height: 5px;
+				background: #fff;
+				#s2k-shadow > .led;
+				#s2k-border-radius > .led;
+			}
+		}
+		&.full{
+			.rly{
+				opacity: 1;
+			}
+		}
+		&.zero{
+			.rly{
+				&:nth-child(1),
+				&:nth-child(2),
+				&:nth-child(3),
+				&:nth-child(4),
+				&:nth-child(5),
+				&:nth-child(6),
+				&:nth-child(10),
+				&:nth-child(11),
+				&:nth-child(15),
+				&:nth-child(16),
+				&:nth-child(20),
+				&:nth-child(21),
+				&:nth-child(25),
+				&:nth-child(26),
+				&:nth-child(30),
+				&:nth-child(31),
+				&:nth-child(35),
+				&:nth-child(36),
+				&:nth-child(40),
+				&:nth-child(41),
+				&:nth-child(42),
+				&:nth-child(43),
+				&:nth-child(44),
+				&:nth-child(45){
+					opacity: 1;
+				}
+			}
+		}
+		&.one{
+			.rly{
+				&:nth-child(3),
+				&:nth-child(8),
+				&:nth-child(13),
+				&:nth-child(18),
+				&:nth-child(23),
+				&:nth-child(28),
+				&:nth-child(33),
+				&:nth-child(38),
+				&:nth-child(43){
+					opacity: 1;
+				}
+			}
+		}
+		&.two{
+			.rly{
+				&:nth-child(1),
+				&:nth-child(2),
+				&:nth-child(3),
+				&:nth-child(4),
+				&:nth-child(5),
+				&:nth-child(10),
+				&:nth-child(15),
+				&:nth-child(20),
+				&:nth-child(25),
+				&:nth-child(20),
+				&:nth-child(21),
+				&:nth-child(22),
+				&:nth-child(23),
+				&:nth-child(24),
+				&:nth-child(25),
+				&:nth-child(26),
+				&:nth-child(31),
+				&:nth-child(36),
+				&:nth-child(41),
+				&:nth-child(42),
+				&:nth-child(43),
+				&:nth-child(44),
+				&:nth-child(45){
+					opacity: 1;
+				}
+			}
+		}
+		&.three{
+			.rly{
+				&:nth-child(1),
+				&:nth-child(2),
+				&:nth-child(3),
+				&:nth-child(4),
+				&:nth-child(5),
+				&:nth-child(10),
+				&:nth-child(15),
+				&:nth-child(20),
+				&:nth-child(21),
+				&:nth-child(22),
+				&:nth-child(23),
+				&:nth-child(24),
+				&:nth-child(25),
+				&:nth-child(30),
+				&:nth-child(35),
+				&:nth-child(40),
+				&:nth-child(41),
+				&:nth-child(42),
+				&:nth-child(43),
+				&:nth-child(44),
+				&:nth-child(45){
+					opacity: 1;
+				}
+			}
+		}
+		&.four{
+			.rly{
+				&:nth-child(1),
+				&:nth-child(5),
+				&:nth-child(6),
+				&:nth-child(10),
+				&:nth-child(11),
+				&:nth-child(15),
+				&:nth-child(16),
+				&:nth-child(20),
+				&:nth-child(21),
+				&:nth-child(22),
+				&:nth-child(23),
+				&:nth-child(24),
+				&:nth-child(25),
+				&:nth-child(30),
+				&:nth-child(35),
+				&:nth-child(40),
+				&:nth-child(45){
+					opacity: 1;
+				}
+			}
+		}
+		&.five{
+			.rly{
+				&:nth-child(1),
+				&:nth-child(2),
+				&:nth-child(3),
+				&:nth-child(4),
+				&:nth-child(5),
+				&:nth-child(6),
+				&:nth-child(11),
+				&:nth-child(16),
+				&:nth-child(21),
+				&:nth-child(22),
+				&:nth-child(23),
+				&:nth-child(24),
+				&:nth-child(25),
+				&:nth-child(30),
+				&:nth-child(35),
+				&:nth-child(40),
+				&:nth-child(41),
+				&:nth-child(42),
+				&:nth-child(43),
+				&:nth-child(44),
+				&:nth-child(45){
+					opacity: 1;
+				}
+			}
+		}
+		&.six{
+			.rly{
+				&:nth-child(1),
+				&:nth-child(2),
+				&:nth-child(3),
+				&:nth-child(4),
+				&:nth-child(5),
+				&:nth-child(6),
+				&:nth-child(11),
+				&:nth-child(16),
+				&:nth-child(21),
+				&:nth-child(22),
+				&:nth-child(23),
+				&:nth-child(24),
+				&:nth-child(25),
+				&:nth-child(26),
+				&:nth-child(30),
+				&:nth-child(31),
+				&:nth-child(35),
+				&:nth-child(36),
+				&:nth-child(40),
+				&:nth-child(41),
+				&:nth-child(42),
+				&:nth-child(43),
+				&:nth-child(44),
+				&:nth-child(45){
+					opacity: 1;
+				}
+			}
+		}
+		&.seven{
+			.rly{
+				&:nth-child(1),
+				&:nth-child(2),
+				&:nth-child(3),
+				&:nth-child(4),
+				&:nth-child(5),
+				&:nth-child(10),
+				&:nth-child(15),
+				&:nth-child(20),
+				&:nth-child(25),
+				&:nth-child(30),
+				&:nth-child(35),
+				&:nth-child(40),
+				&:nth-child(45){
+					opacity: 1;
+				}
+			}
+		}
+		&.eight{
+			.rly{
+				&:nth-child(1),
+				&:nth-child(2),
+				&:nth-child(3),
+				&:nth-child(4),
+				&:nth-child(5),
+				&:nth-child(6),
+				&:nth-child(10),
+				&:nth-child(11),
+				&:nth-child(15),
+				&:nth-child(16),
+				&:nth-child(20),
+				&:nth-child(21),
+				&:nth-child(22),
+				&:nth-child(23),
+				&:nth-child(24),
+				&:nth-child(25),
+				&:nth-child(26),
+				&:nth-child(30),
+				&:nth-child(31),
+				&:nth-child(35),
+				&:nth-child(36),
+				&:nth-child(40),
+				&:nth-child(41),
+				&:nth-child(42),
+				&:nth-child(43),
+				&:nth-child(44),
+				&:nth-child(45){
+					opacity: 1;
+				}
+			}
+		}
+		&.nine{
+			.rly{
+				&:nth-child(1),
+				&:nth-child(2),
+				&:nth-child(3),
+				&:nth-child(4),
+				&:nth-child(5),
+				&:nth-child(6),
+				&:nth-child(10),
+				&:nth-child(11),
+				&:nth-child(15),
+				&:nth-child(16),
+				&:nth-child(20),
+				&:nth-child(21),
+				&:nth-child(22),
+				&:nth-child(23),
+				&:nth-child(24),
+				&:nth-child(25),
+				&:nth-child(30),
+				&:nth-child(35),
+				&:nth-child(40),
+				&:nth-child(41),
+				&:nth-child(42),
+				&:nth-child(43),
+				&:nth-child(44),
+				&:nth-child(45){
+					opacity: 1;
+				}
+			}
+		}
+	}
+	
+    .scorecard#scorehome,
+    .board.inverted .scorecard#scorevisitors{
+        left:60px;
+        &::after,
+        &::before{
+            //dividerpoints
+            right:-59px;
+            top:36px;
+        }
+        &::after{
+            right:-66px;
+        }
+    }
+    
+    .scorecard#scorevisitors,
+    .board.inverted .scorecard#scorehome{
+        left:260px;
+        &::after,
+        &::before{
+            //dividerpoints
+            right:134px;
+            top:87px;
+        }
+        &::after{
+            right:141px;
+        }
+    }
+
+	
+	.players{
+        display:none;
+	}
+}
+
+
+@media only screen and/*!yui*/(orientation:portrait){
+	#scoreboard{
+		.board{
+			width: 300px;
+        }
+
+        .scorecard#scorehome,
+        .board.inverted .scorecard#scorevisitors{
+            left:35px;
+            &::after,
+            &::before{
+                //dividerpoints
+                right:-33px;
+                top:41px;
+            }
+            &::after{
+                right:-40px;
+            }
+        }
+
+        .scorecard#scorevisitors,
+        .board.inverted .scorecard#scorehome{
+            left:185px;
+            &::after,
+            &::before{
+                //dividerpoints
+                right:110px;
+                top:82px;
+            }
+            &::after{
+                right:117px;
+            }
+        }
+            
+		.players{
+		    clear:both;
+            width: 200px;
+            text-align: left;
+            margin: 20px auto 0;
+            padding: 20px 10px 10px;
+            #s2k-gradient > .box();
+            #s2k-border-radius > .button;
+            > div{
+                position: relative;
+                margin: 0 auto;
+                counter-reset: players;
+                &::after{
+                    content:"vs";
+                    position: absolute;
+                    top:50%;
+                    left:50%;
+                    width:30px;
+                    text-align: center;
+                    margin: -8px 0 0 -15px;
+                    font-weight: bold;
+                }
+            }
+            .formrow{
+                position: relative;
+                clear: both;
+                > div{
+                    display: block;
+                    margin: 0 0 10px;
+                    padding: 0 0 0 30px;
+                    font-weight: bold;
+                    font-size: 14px;
+                    line-height: 18px;
+                    background: transparent url("../../images/elements/el_jersey_white.svg") no-repeat 0 50%;
+                    background-size: 25px 20px;
+                }
+                &:last-of-type{
+                    margin: 26px 0 0;
+                    &::before,
+                    &::after{
+                        content:"\00a0";
+                        overflow:hidden;
+                        display: block;
+                        background: #fff;
+                        height: 1px;
+                        position: absolute;
+                        top:-13px;
+                    }
+                    &::before{
+                        left:0;
+                        right: 50%;
+                        margin: 0 20px 0 0;
+                    }
+                    &::after{
+                        right:0;
+                        left: 50%;
+                        margin: 0 0 0 20px;
+                    }
+                    > div{
+                        background-image: url("../../images/elements/el_jersey_black.svg");
+                    }
+                    
+                }
+            }
+            &.opponents2{
+                .formrow{
+                    > div{
+                        &:nth-of-type(2n+2){
+                            display:none;
+                        }
+                    }
+                }
+            }
+            &.show{
+              display:block;
+            }
+        }
+    }
+    .nosvg{
+        #scoreboard .players .formrow > div{
+            background-image: url("../../images/elements/el_jersey_white.png");
+        }
+        #scoreboard .players .formrow:last-of-type > div,
+        #scoreboard .players.opponents2 .formrow > div:last-of-type{
+            background-image: url("../../images/elements/el_jersey_black.png");
+        }
+    }
+}

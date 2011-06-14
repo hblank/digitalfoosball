@@ -1,0 +1,27 @@
+#summary{
+	.tweet{
+		a{
+			display: inline-block;
+			padding: 5px 8px;
+			color: #fff;
+			background: @s2k-grey;
+			font-weight: bold;
+			#s2k-border-radius > .button;
+		}
+	}
+}
+
+@media only screen and/*!yui*/(orientation:portrait){
+	#summary{
+		.h1{
+			font-size: 22px;
+		}
+		.tweet{
+			margin-top: 40px;
+			a{
+				font-size: 16px;
+				padding: 10px 15px;
+			}
+		}
+	}
+}

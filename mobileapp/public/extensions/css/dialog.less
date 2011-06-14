@@ -1,0 +1,97 @@
+#dialog{
+	@width:350px;
+	@height:175px;
+	@borderColor:@s2k-green;
+	position: fixed;
+	z-index: 10;
+	top:50%;
+	left:50%;
+	#s2k-box > .border;
+	width:@width;
+	height:@height;
+	border:1px solid @borderColor;
+	margin: @height / 2 * -1 0 0 @width / 2 * -1 ;
+	background: rgba(0,0,0,.8);
+	#s2k-border-radius > .button;
+	#s2k-gradient > .dialog;
+	#s2k-transition-time > .lightbox();
+
+	.h{
+		border-bottom:1px solid @borderColor;
+		font-size:14px;
+		line-height: 14px;
+		font-weight: bold;
+		text-align: center;
+		padding: 8px 0;
+		text-transform: uppercase;
+	}
+	.b{
+		margin: 0;
+		padding: 20px;
+		font-size: 14px;
+	}
+	> div{
+		position: absolute;
+		bottom:5px;
+		left:5px;
+		right:5px;
+		a{
+			position: absolute;
+			left:0;
+			bottom: 0;
+			display: block;
+			width: 49%;
+			padding:8px;
+			font-weight: bold;
+			font-size: 14px;
+			line-height: 14px;
+			text-align: center;
+			text-transform: uppercase;
+			text-shadow: rgba(0, 0, 0, .5) 0 1px 1px;
+			#s2k-box > .border;
+			#s2k-gradient > .button3;
+			#s2k-border-radius > .button;
+			&.default{
+				#s2k-gradient > .button;
+				left: auto;
+				right:0;
+			}
+			&:active{
+				#s2k-gradient > .buttonhi;
+			}
+		}
+	}
+	&.alert{
+		border-color: @s2k-red;
+		.h{
+			border-color: @s2k-red;
+		}
+		a{
+			&.default{
+				#s2k-gradient > .button2;
+			}
+		}
+	}
+	
+	&.hide{
+		opacity: 0;
+		#s2k-transform > .lightbox();
+	}
+}
+#shim{
+	position:fixed;
+	top:0;
+	right:0;
+  bottom:0;
+	left:0;
+	z-index: 9;
+	background: rgba(0,0,0,.5);
+}
+
+@media only screen and/*!yui*/(orientation:portrait){
+	#dialog{
+		@width:300px;
+		width:@width;
+		margin-left: @width / 2 * -1 ;
+	}
+}
