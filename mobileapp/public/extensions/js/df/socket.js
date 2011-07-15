@@ -3,8 +3,8 @@ df.socket = (function() {
       host;
 
   df.subscribe("ready", function() {
-    var socket = new io.Socket(df.config.websocket.server, {
-      port: df.config.websocket.port,
+    var socket = new io.Socket(df.config.socketconf.host, {
+      port: df.config.socketconf.port,
       transports: ["websocket", "xhr-multipart", "xhr-polling", "jsonp-polling"], 
       maxReconnectionAttempts: 50
     });

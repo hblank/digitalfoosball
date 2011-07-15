@@ -5,7 +5,7 @@ if (typeof console === "undefined") {
   };
 }
 
-var df = (function () {
+var df = (function (df) {
   var subscriptions = {};
   var __subscribe = function(events, cb, once) {
     events.replace(/(\s)\s*/g, "$1").split(" ").forEach(function(e) {
@@ -14,26 +14,26 @@ var df = (function () {
     });
   };
 
-  return {
-    subscribe: function(e, cb) {
-      __subscribe(e, cb, false);
-    },
+  df.subscribe = function(e, cb) {
+    __subscribe(e, cb, false);
+  };
 
-    subscribeOnce: function(e, cb) {
-      __subscribe(e, cb, true);
-    },
+  df.subscribeOnce = function(e, cb) {
+    __subscribe(e, cb, true);
+  };
 
-    publish: function(events) {
-      var args = Array.prototype.slice.call(arguments, 1);
-      events.replace(/(\s)\s*/g, "$1").split(" ").forEach(function(e) {
-        subscriptions[e] && subscriptions[e].forEach(function(obj, index) {
-          obj.cb && obj.cb.apply(this, args);
-          obj.once && subscriptions[e].splice(index, 1);
-        });
+  df.publish = function(events) {
+    var args = Array.prototype.slice.call(arguments, 1);
+    events.replace(/(\s)\s*/g, "$1").split(" ").forEach(function(e) {
+      subscriptions[e] && subscriptions[e].forEach(function(obj, index) {
+        obj.cb && obj.cb.apply(this, args);
+        obj.once && subscriptions[e].splice(index, 1);
       });
-    }
-  }; 
-})();
+    });
+  };
+
+  return df;
+})(typeof df === "undefined" ? {} : df);
 
 $(document).ready(function() {
   df.publish("ready");

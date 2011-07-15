@@ -2,10 +2,10 @@ df.dev = (function() {
   $(window).bind("keyup", function(e) {
     if ($(".page.active form").length === 0) {
       if (e.keyCode === 72) {
-        $.post(df.config.websocket.server + "/events/goals/home")
+        $.post("/events/goals/home")
         console.log("Goal HOME");
       } else if (e.keyCode === 71) {
-        $.post(df.config.websocket.server + "/events/goals/visitors")
+        $.post("/events/goals/visitors")
         console.log("Goal VISITORS");
       } else if (e.keyCode ===  65) {
         $(".js_abortgame").trigger("click");

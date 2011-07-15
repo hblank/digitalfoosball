@@ -6,7 +6,7 @@ df.scoreboard = (function() {
       players = "";
 
   for (var i = 0; i < 45; ++i) {
-    scoreSign.push('<span class="rly"></span>');
+    scoreSign.push("<span class=\"rly\"></span>");
   }
 
   df.subscribe("ready", function() {
@@ -23,7 +23,7 @@ df.scoreboard = (function() {
       $("#score" + side).attr("class", ["scorecard", ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"][goals[side]] || "full"].join(" "));
     });
 
-    $("#scoreboard .js_undo")[goals.home + goals.visitors > 0 ? "removeClass" : "addClass"]("hide");
+    $("#scoreboard .js_undo")[goals.home + goals.visitors > 0 ? "removeClass" : "addClass"]("hide js_disabled");
 
     if (players != cplayers) {
       var l = msg.game.players.home.length;

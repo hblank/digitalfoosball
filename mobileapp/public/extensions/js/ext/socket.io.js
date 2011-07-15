@@ -1876,7 +1876,11 @@ if (typeof window != 'undefined'){
 /*	SWFObject v2.2 <http://code.google.com/p/swfobject/> 
 	is released under the MIT License <http://www.opensource.org/licenses/mit-license.php> 
 */
-var swfobject = false;//disabled swfobject -- too slow on android
+var swfobject = {
+  "hasFlashPlayerVersion": function(){
+    return false;
+  }
+};//disabled swfobject -- too slow on android
 // Copyright: Hiroshi Ichikawa <http://gimite.net/en/>
 // License: New BSD License
 // Reference: http://dev.w3.org/html5/websockets/

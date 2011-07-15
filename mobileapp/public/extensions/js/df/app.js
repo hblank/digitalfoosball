@@ -6,7 +6,7 @@ df.app = (function() {
     if (!($("#"+page).hasClass("active"))) {
       $(".page.active").removeClass("active");
       $("#"+page).addClass("active");
-      df.config.production && _gaq.push(["_trackPageview", "/"+page]);
+      df.ga.track("/" + page);
     }
   };
 
@@ -98,7 +98,7 @@ df.app = (function() {
 
   $(".js_undo").live("click",function(e) {
     e.preventDefault();
-    actionIfPermitted(function() {
+    !$(this).hasClass("js_disabled") && actionIfPermitted(function() {
       df.publish("client:event", "undo");
     });
   });

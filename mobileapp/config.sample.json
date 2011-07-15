@@ -1,19 +1,24 @@
 {
-  "port": 3000,
-  "socketport": 3001,
   "locale": "en_US",
-  "couch": {
+  "cdn": "http://cdn.yourdomain.com",
+  "ga": "",
+  "server": {
+    "port": 3000,
+    "socketport": 3001
+  },
+  "socketconf": {
+    "host": "",
+    "port": 3001
+  },
+  "couchdb": {
     "host": "127.0.0.1",
     "port": 5984,
-    "path": "/digitalfoosball/"
+    "database": "digitalfoosball"
   },
   "scoreboard": {
     "home": "Home",
     "visitors": "Visitors",
     "inverted": false
-  },
-  "production": {
-    "cdn": "http://cdn.yourdomain.com"
   },
   "twitter": {
     "userId": "",

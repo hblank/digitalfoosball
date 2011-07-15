@@ -65,10 +65,16 @@ app.post("/events/*", function(req, res){
 });
 
 var data = {
-  isProduction: /\bproduction\b/.test(process.env.NODE_ENV),
+  production: /\bproduction\b/.test(process.env.NODE_ENV),
+  cdn: config.cdn,
+  rev: config.rev,
   scoreboard: config.scoreboard,
-  cdn: config.production.cdn,
-  rev: config.rev
+  config: JSON.stringify({
+    production: /\bproduction\b/.test(process.env.NODE_ENV),
+    scoreboard: config.scoreboard,
+    ga: config.ga,
+    socketconf: config.socketconf
+  })
 };
 
 for (var key in locales) {
@@ -88,15 +94,17 @@ app.get("/dialog", function(req, res) {
   res.render("partials/dialog", data);
 });
 
-app.listen(config.port);
+app.listen(config.server.port);
 sys.debug("\x1b[1mExpress server started on port " + app.address().port + "\x1b[0m");
 
-sockapp.listen(config.socketport);
+sockapp.listen(config.server.socketport);
 sys.debug("\x1b[1mExpress WebSocket server started on port " + sockapp.address().port + "\x1b[0m\n");
 
 var socket = io.listen(sockapp);
 socket.on("connection", function(client) {
   te.subscribeOnce("referee:welcome", function(msg) {
+    var copy = JSON.parse(JSON.stringify(msg));
+    msg.time = new Date().getTime();
     client.send(msg);
   });
   te.publish("client:connect", client);

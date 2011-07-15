@@ -5,9 +5,9 @@ var sys = require("sys"),
     te = require("./tableevents").TableEvents;
 
 var options = {
-  host: config.couch.host,
-  port: config.couch.port,
-  path: config.couch.path,
+  host: config.couchdb.host,
+  port: config.couchdb.port,
+  path: "/" + config.couchdb.database + "/",
   method: "POST",
   headers: {
     "Connection": "keep-alive",

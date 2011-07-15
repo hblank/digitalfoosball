@@ -2,17 +2,13 @@
  * Loading configuration starts here
  * Path will be prefixed with baseURL
  */
-var env = "development";
 var dependencies = [
-  "extensions/js/ext/zepto.min.js",
+  "extensions/js/ext/zepto.js",
   "extensions/js/ext/socket.io.js",
   
   "extensions/js/df/df.js",
-
-  "extensions/js/df/config.js",
-
-  "extensions/js/df/app.js",
   "extensions/js/df/socket.js",
+  "extensions/js/df/app.js",
   "extensions/js/df/scoreboard.js",
   "extensions/js/df/summary.js",
   "extensions/js/df/dialog.js",
