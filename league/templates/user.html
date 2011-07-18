@@ -1,0 +1,111 @@
+<section id="content" class="userdetail">
+  <aside>
+    {{#user}}
+      <div id="summary">
+        <hgroup>
+          <h1 class="h1" {{#avatar}}style="background-image:url({{avatar}});"{{/avatar}}>{{name}}</h1>
+          <h2 class="h2">{{locales.user.registered}} {{registered}}</h2>
+        </hgroup>
+        <div class="meter h1">{{locales.user.rank}} <span>{{rank}}</span></div>
+        <div class="progress">{{score}} {{locales.user.points}}</div>
+      </div>
+      <ul id="nemesis">
+        <li>
+          {{#nemesis}}
+            <hgroup>
+              <h1 class="h1">{{locales.user.nemesis.hl}}</h1>
+            </hgroup>
+            <a href="#!/statistic/{{name}}" class="user" {{#avatar}}style="background-image:url({{avatar}});"{{/avatar}}>{{{name}}</a>{{quote}}% {{locales.user.nemesis.lost}}
+          {{/nemesis}}
+        </li>
+        <li>
+          {{#teammate}}
+            <hgroup>
+              <h1 class="h1">{{locales.user.teammate.hl}}</h1>
+            </hgroup>
+            <a href="#!/statistic/{{name}}" class="user" {{#avatar}}style="background-image:url({{avatar}});"{{/avatar}}>{{name}}</a>{{quote}}% {{locales.user.teammate.won}}
+          {{/teammate}}
+        </li>
+        <li>
+          {{#challenger}}
+            <hgroup>
+              <h1 class="h1">{{locales.user.challenger.hl}}</h1>
+            </hgroup>
+            <a href="#!/statistic/{{name}}" class="user" {{#avatar}}style="background-image:url({{avatar}});"{{/avatar}}>{{name}}</a>{{locales.user.challenger.rank}} {{rank}}
+          {{/challenger}}
+        </li>
+      </ul>
+      <div id="performance">
+        {{#graph}}
+          <hgroup>
+            <h1 class="h1">{{locales.user.statistic.hl}}</h1>
+          </hgroup>
+          <img src="https://chart.googleapis.com/chart?chs=595x115&amp;cht=lc&amp;chxt=y&amp;chxl=0:|{{max}}|1&amp;chd=t:{{ranks}}&amp;chds=1,{{max}}&amp;chls=3&amp;chco=82bb37&amp;chf=bg,s,00000000" width="595" height="115" />
+        {{/graph}}
+      </div>
+      <div id="gamesgoals">
+        <div>
+          <hgroup>
+            <h1 class="h1">{{locales.user.games.hl}}</h1>
+          </hgroup>
+          {{#games}}
+            <dl>
+              {{#won}}
+                <dt>{{locales.user.games.won}}</dt>
+                <dd><span class="meter more" data-value="{{amount}}" data-percentage="{{percentage}}"></span></dd>
+              {{/won}}
+              {{#lost}}
+                <dt>{{locales.user.games.lost}}</dt>
+                <dd><span class="meter less" data-value="{{amount}}" data-percentage="{{percentage}}"></span></dd>
+              {{/lost}}
+            </dl>
+          {{/games}}
+        </div>
+        <div>
+          <hgroup>
+            <h1 class="h1">{{locales.user.goals.hl}}</h1>
+          </hgroup>
+          {{#goals}}
+            <dl>
+              {{#scored}}
+                <dt>{{locales.user.goals.scored}}</dt>
+                <dd><span class="meter more" data-value="{{amount}}" data-percentage="{{percentage}}"></span></dd>
+              {{/scored}}
+              {{#conceded}}
+                <dt>{{locales.user.goals.conceded}}</dt>
+                <dd><span class="meter less" data-value="{{amount}}" data-percentage="{{percentage}}"></span></dd>
+              {{/conceded}}
+            </dl>
+          {{/goals}}
+        </div>
+      </div>
+    {{/user}}
+  </aside>
+  <bside>
+    <nav id="tabnav">
+      <a href="#" class="active">{{locales.user.games.nav.lastgames}}</a>
+      <!-- a href="#">{{locales.user.games.nav.lastmonth}}</a -->
+      <!-- a href="#">{{locales.user.games.nav.allgames}}</a -->
+    </nav>
+    <ol id="history">
+      {{#games}}
+        <li>
+          <div class="score">{{#goals}}{{home}}:{{visitors}}{{/goals}}</div>
+          <ol>
+            {{#players}}
+              {{#home}}
+                <li>{{#.}}<a href="#!/statistic/{{.}}">{{/.}}{{.}}{{#.}}</a>{{/.}}</li>
+              {{/home}}
+              {{#visitors}}
+                <li>{{#.}}<a href="#!/statistic/{{.}}">{{/.}}{{.}}{{#.}}</a>{{/.}}</li>
+              {{/visitors}}
+            {{/players}}
+          </ol>
+          <time>{{locales.user.games.date}}: {{end}}</time>
+          <div class="points">{{score}} {{locales.user.games.points}}</div>
+        </li>
+      {{/games}}
+    </ol>
+  </bside>
+</section>
+

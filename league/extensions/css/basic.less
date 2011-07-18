@@ -1,0 +1,266 @@
+/***basics***/
+html{
+	min-height: 100%;
+}
+body{
+	margin:0;
+	padding:160px 0 0;
+	font-size:14px;
+	line-height:16px;
+	#s2k-font > .Helvetica;
+	color:@s2k-white;
+	background: url("../../images/logos/lg_html5_b.svg") no-repeat fixed 10px 99%,
+				url("../../images/backgrounds/bg_bodyhighl.svg") no-repeat fixed 0 122px,
+				url("../../images/backgrounds/bg_bodyhighr.svg") no-repeat fixed 100% 100%,
+				url("../../images/backgrounds/bg_bodybase.svg") repeat fixed 0 3px,
+				#000;
+	overflow-y: scroll; //avoid page jumping
+}
+a{
+	text-decoration:none;
+	color:@s2k-white;
+	&:hover{
+	    color:@s2k-green;
+	}
+	#s2k-transition-time > .color;
+}
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
+	margin:0;
+	padding:0;
+	font-weight:normal;
+	font-size:100%;
+	line-height:normal;
+}
+p{
+	margin:0 0 14px 0;
+	padding:0;
+	line-height:14px;
+}
+
+form,
+fieldset,
+legend {
+	border:0;
+	padding:0;
+	margin:0;
+}
+object{display:block;}
+dl,dt,dd,ul,ol,li{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+img{border:none;}
+acronym,
+abbr{
+	border-bottom: #333 1px dotted;
+	font-style:normal;
+	text-transform:none;
+}
+b,strong{font-weight:bold;}
+object,embed{outline:none;}
+address{
+	font-style:normal;
+	line-height:18px;
+}
+iframe{
+	display:block;
+	border:none;
+	background:transparent;
+}
+table{
+	border-width:0;
+	border-spacing:0;
+	border-collapse:collapse;
+	caption{
+		text-align:left;
+	}
+	th,td{
+		padding:0;
+		vertical-align:top;
+	}
+	th{
+		font-weight:bold;
+		text-align:left;
+	}
+}
+
+
+
+.h1{
+	clear:both;
+	margin:0 0 10px 0;
+	font-size:16px;
+	line-height:normal;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.h2{
+	margin:0 0 10px;
+	font-size:15px;
+	font-weight: bold;
+}
+
+
+#container{
+	min-width: 980px;
+}
+
+header{
+	#s2k-flexbox > .display;
+	#s2k-flexbox > .pack > .end;
+	#s2k-flexbox > .orient > .vertical;
+	position: absolute;
+	top:0;
+	left:0;
+	right:0;
+	z-index: 1;
+	height:121px;
+	min-width: 980px;
+    padding:8px 10px 0;
+	margin: 0 0 15px;
+	color:#fff;
+	font-size:20px;
+	border-bottom: 4px solid @s2k-darkgreen;
+	#s2k-box > .border;
+	#s2k-gradient > .toolbar;
+	-webkit-transform: translate3d(0,0,0);
+	-webkit-animation-name:acceleratedReveal; 
+	-webkit-animation-duration:1s;
+	#logo{
+		position: absolute;
+		top:21px;
+		left:24px;
+		display: block;
+		width: 64px;
+		height: 78px;
+		text-indent: -3000px;
+		background: transparent url("../../images/logos/lg_logo.svg") no-repeat 0 0;
+		a{
+		    display:block;
+		    height: 100%;
+		}
+	}
+	
+	#metanav{
+		position: absolute;
+		top:0;
+		right:0;
+		a{
+			font-size: 13px;
+			padding: 0 8px;
+			#s2k-font > .HelveticaNeue;
+			&::after{
+				content:"|";
+				position: relative;
+				right:-8px;
+			}
+			&:last-child{
+				&::after{
+					display: none;
+				}
+			}
+		}
+	}
+	#mainnav{
+		#s2k-flexbox > .display;
+		#s2k-flexbox > .pack > .center;
+		#s2k-flexbox > .align > .end;
+		width: 100%; //FF
+		height: 100%; //FF
+		a{
+			display: block;
+			width:211px;
+			height: 37px;
+			padding: 12px 0 0;
+			margin: 2px 1px;
+			text-align: center;
+			background: green;
+			font-weight: bold;
+			font-size: 16px;
+			line-height: 16px;
+			text-align: center;
+			text-transform: uppercase;
+			text-shadow: rgba(0, 0, 0, .5) 0 1px 1px;
+			#s2k-box > .border;
+			#s2k-gradient > .tab;
+			#s2k-shadow > .tab;
+			#s2k-font > .HelveticaNeue;
+			&:hover,
+			&.active{
+				height: 41px;
+				margin: 0 1px;
+				padding-top: 14px;
+				#s2k-gradient > .tabhi;	
+				#s2k-shadow > .none;	
+				color: @s2k-white;
+			}
+		}
+	}
+}
+
+#content{
+	position: relative;
+	width: 635px;
+	margin: 0 auto;
+	aside{
+		-webkit-transform: translate3d(0,0,0);
+		#s2k-box > .border;
+	}
+	bside{
+		-webkit-transform: translate3d(0,0,0);
+		position: absolute;
+		top:0;
+		right:-345px;
+		width: 325px;
+		#s2k-box > .border;
+		
+		#tabnav{
+			#s2k-flexbox > .display;
+			#s2k-flexbox > .pack > .justify;
+			width: 100%; // FF
+			a{
+				#s2k-flexbox > .box-flex-one;
+				display: block;
+				padding: 3px 4px;
+				background: @s2k-box-grey;
+				font-size: 12px;
+				font-weight: bold;
+				text-align: center;
+				margin-bottom: 2px;
+				color: @s2k-line-grey;
+				&:hover{
+					color: @s2k-green;
+				}
+				+ a{
+					margin-left: 2px;
+				}
+				&.active{
+					margin-bottom: 0;
+					color: @s2k-white;
+					cursor: default;
+				}
+			}
+		}
+	}
+}
+
+
+/* windows lte 1024*/
+@media screen and (max-width:1024px) {
+	#content{
+		width: 980px;
+		aside{
+		    width: 635px;
+		}
+		bside{
+		    right: 0;
+		}
+	}
+}
+/* displays gt 1024*/
+@media screen and (min-device-width:1025px) {
+	header{
+	  position: fixed;
+	}
+}
