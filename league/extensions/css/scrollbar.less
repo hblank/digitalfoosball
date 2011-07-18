@@ -1,0 +1,40 @@
+/* desktops with exactly 1920*/
+@media screen and (min-width: 1025px) {
+    body,html{
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+
+    #container {
+        position: absolute;
+        top: 160px;
+        left: 0;
+        bottom: 0;
+        right: 10px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 5px;
+    }
+    
+    ::-webkit-scrollbar-button:start:decrement,
+    ::-webkit-scrollbar-button:end:increment {
+        height: 10px;
+        display: block;
+        background-color: transparent;
+    }
+    
+    ::-webkit-scrollbar-track-piece {
+        background-color: transparent;
+        -webkit-border-radius: 3px;
+    }
+    
+    ::-webkit-scrollbar-thumb:vertical {
+        height: 50px;
+        background-color: @s2k-darkgrey;
+        -webkit-border-radius: 3px;
+    }
+}

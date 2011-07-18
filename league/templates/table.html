@@ -1,0 +1,70 @@
+<section id="content" class="league">
+  <aside>
+    <h2 class="h1">{{locales.table.league}}</h2>
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>{{locales.table.league.col.header.player}}</th>
+          <th>{{locales.table.league.col.header.goals}}</th>
+          <th>{{locales.table.league.col.header.diff}}</th>
+          <th>{{locales.table.league.col.header.points}}</th>
+          <th>{{locales.table.league.col.header.victories}}</th>
+          <th>{{locales.table.league.col.header.defeats}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#table}}
+          <tr>
+            <td>{{#position}}{{position}}.{{/position}}</td>
+            <td><a href="#!/statistic/{{name}}">{{name}}</a></td>
+            {{#goals}}
+              <td>{{scored}}:{{conceded}}</td>
+              <td>{{diff}}</td>
+            {{/goals}}
+            <td>{{score}}</td>
+            {{#games}}
+              <td>{{won}}</td>
+              <td>{{lost}}</td>
+            {{/games}}
+          </tr>
+        {{/table}}
+      </tbody>
+    </table>
+  </aside>
+  <bside>
+    <h2 class="h1">{{locales.table.league.col.header.badges}}</h2>
+    <ul>
+      <li class="badgetype">
+        <h3 class="h2">{{locales.table.badge.hunter}}</h3>
+        <p>{{locales.table.badge.hunter.message}}</p>
+        <p>@s2kicker  |  17.05.2011</p>
+      </li>
+      <li class="badgetype">
+        <h3 class="h2">{{locales.table.badge.hattrik}}</h3>
+        <p>{{locales.table.badge.hattrik.message}}</p>
+        <p>@s2kicker  |  17.05.2011</p>
+      </li>
+      <li class="badgetype">
+        <h3 class="h2">{{locales.table.badge.speedy}}</h3>
+        <p>{{locales.table.badge.speedy.message}}</p>
+        <p>@s2kicker  |  17.05.2011</p>
+      </li>
+      <li class="badgetype">
+        <h3 class="h2">{{locales.table.badge.patience}}</h3>
+        <p>{{locales.table.badge.patience.message}}</p>
+        <p>@s2kicker  |  17.05.2011</p>
+      </li>
+      <li class="badgetype">
+        <h3 class="h2">{{locales.table.badge.fan}}</h3>
+        <p>{{locales.table.badge.fan.message}}</p>
+        <p>@s2kicker  |  17.05.2011</p>
+      </li>
+      <li class="badgetype">
+        <h3 class="h2">{{locales.table.badge.lantern}}</h3>
+        <p>{{locales.table.badge.lantern.message}}</p>
+        <p>@s2kicker  |  17.05.2011</p>
+      </li>
+    </ul>
+  </bside>
+</section>

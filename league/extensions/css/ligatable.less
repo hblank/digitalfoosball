@@ -1,0 +1,87 @@
+.league{
+	aside{
+        background: @s2k-box-grey;
+        padding: 20px 10px;
+        > h2{
+            margin:0 0 20px 10px;
+        }
+        table{
+            width: 100%;
+            td,th{
+                border:1px solid @s2k-line-darkgrey;
+                padding: 5px 10px;
+                text-align: center;
+                font-weight: bold;
+                &:nth-of-type(2){
+                    text-align: left;
+                    width: 100%;
+                }
+                &:first-of-type{
+                    text-align: right;
+                    border-left: none;
+                }
+                &:last-of-type{
+                    border-right: none;
+                }
+                a{
+                    color: inherit;
+                }
+            }
+            th{
+                border-top: none;
+                text-transform: uppercase;
+                color: @s2k-darkgrey;
+            }
+            tr{
+                cursor: pointer;
+                &:last-of-type{
+                    td{
+                        border-bottom: none;
+                    }
+                }
+                &:hover{
+                    td{
+                        color:@s2k-green;
+                        background: rgba(0,0,0,.3);
+                    }
+                }
+            }
+        }
+	}
+	bside{
+        background: @s2k-box-grey;
+        padding: 20px 0 20px 20px;
+        > h2{
+            margin:0 0 20px;
+        }
+        li{
+            padding: 0 0 0 75px;
+            margin: 0 0 20px;
+            background: transparent no-repeat 0 5px;
+            background-size: 95px;
+            &.badgetype{
+                background-image:url('../../images/icons/ic_badge.svg');
+                
+            }
+            &:last-of-type{
+                margin-bottom: 0;
+            }
+            p{
+                margin-bottom: 10px;
+            }
+        }
+	}
+}
+
+/* ipad and desktops with exactly 1024*/
+@media screen and/*!YUI-Compresser */(max-width:1024px) {
+.league{
+	aside{
+        table{
+            td,th{
+                padding: 10px 10px;
+                }
+            }
+        }
+    }
+}
